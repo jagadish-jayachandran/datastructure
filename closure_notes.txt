@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h1>Demo: Closure</h1>
+	<script>    
+	function Counter() {
+    
+		var counter = 0;
+
+		setTimeout( function () {
+			var innerCounter = 0;
+			counter += 1;
+			alert("counter = " + counter);
+
+			setTimeout( function () {
+				counter += 1;
+				innerCounter += 1;
+				alert("counter = " + counter + ", innerCounter = " + innerCounter)
+			}, 500);
+
+		}, 1000);
+	};
+
+	Counter();
+	</script>	
+</body>
+</html>
+
+definition:
+
+Closure means that an inner function always has access to the vars and
+ parameters of its outer function, even after the outer function has
+ returned.
+
+function OuterFunction() {
+
+    var outerVariable = 1;
+
+    function InnerFunction() {
+        alert(outerVariable);
+    }
+
+    InnerFunction();
+}
